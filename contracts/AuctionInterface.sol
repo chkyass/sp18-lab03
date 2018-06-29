@@ -1,15 +1,18 @@
-pragma solidity 0.4.19;
+pragma solidity ^0.4.19;
+
 
 /** @title AuctionInterface */
 contract AuctionInterface {
-	address highestBidder;
-	uint highestBid;
-	function bid() payable external returns (bool);
-	function reduceBid() external;
-	function getHighestBidder() constant returns (address) {
-		return highestBidder;
-	}
-	function getHighestBid() constant returns (uint) {
-		return highestBid;
-	}
+    address highestBidder;
+    uint highestBid;
+    function bid() external payable returns (bool);
+    function reduceBid() external;
+    
+    function getHighestBidder() public view returns (address) {
+        return highestBidder;
+    }
+    
+    function getHighestBid() public view returns (uint) {
+        return highestBid;
+    }
 }
